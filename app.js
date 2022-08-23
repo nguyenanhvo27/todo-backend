@@ -20,8 +20,8 @@ mongoose
   .then(() => {
     console.log("Connected to database!");
   })
-  .catch(() => {
-    console.log("Connection failed!");
+  .catch((e) => {
+    console.log(e);
   });
 
 // Use body-parser to parse incoming reuests
