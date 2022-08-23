@@ -1,3 +1,4 @@
 module.exports = {
-  localConnString: "mongodb://localhost:27017/todo",
+  localConnString:
+    "mongodb+srv://nguyenanhvo:anhvo7777@cluster0.xa2ws0s.mongodb.net/todo?retryWrites=true&w=majority",
 };

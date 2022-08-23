@@ -15,7 +15,7 @@ const app = express();
 // Handle MongoDB Connection
 mongoose
   .connect(mongo.localConnString, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
   })
   .then(() => {
     console.log("Connected to database!");
@@ -26,9 +26,11 @@ mongoose
 
 // Use body-parser to parse incoming reuests
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
 
 // Use Cors to avoid annoying CORS Errors
 app.use(cors());
@@ -43,8 +45,8 @@ app.use("/api/info", (req, res, next) => {
     description: "RESTful API Designed in Node.js for TODO application.",
     methodsAllowed: "GET, POST, PUT, PATCH, DELETE",
     authType: "None",
-    rootEndPoint: req.protocol + '://' + req.get('host') + '/api/v1',
-    documentation: "https://github.com/toslimarif/todo-api"
+    rootEndPoint: req.protocol + "://" + req.get("host") + "/api/v1",
+    documentation: "https://github.com/toslimarif/todo-api",
   });
 });
 
