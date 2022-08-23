@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+require("dotenv").config();
 // Import Creds
 const mongo = require("./credentials/mongo");
 
@@ -14,12 +14,9 @@ const app = express();
 
 // Handle MongoDB Connection
 mongoose
-  .connect(
-    "mongodb+srv://nguyenanhvo:anhvo7777@cluster0.xa2ws0s.mongodb.net/todo?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-    }
-  )
+  .connect(process.env.URL_API, {
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("Connected to database!");
   })
